@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         return true
     }
     
-    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
             let move = SCNAction.rotateBy(x: CGFloat(Float(arc4random()).truncatingRemainder(dividingBy: 360)), y: CGFloat(Float(arc4random()).truncatingRemainder(dividingBy: 360)), z: CGFloat(Float(arc4random()).truncatingRemainder(dividingBy: 360)), duration: 3)
             self.sceneView.scene?.rootNode.childNode(withName: "NumbersDie" ,recursively: false)?.runAction(move)
